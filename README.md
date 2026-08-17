@@ -1,58 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🍷 Bordeux AI — Private Sommelier & Wine Concierge Platform
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> **High-Ticket Private Member Club for Fine Wine Collectors & Connoisseurs**
 
-## About Laravel
+Bordeux AI is an invitation-only luxury platform that merges high-precision AI sommelier consultation via Telegram (powered by DeepSeek-V4) with automated wine cellar portfolio tracking, vintage drinking window analytics, and discreet S2S billing gateways.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠 Technology Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel 13, PHP 8.4
+- **Frontend**: React.js + Inertia.js (Quiet Luxury UI/UX)
+- **Styling**: Tailwind CSS, Framer Motion, Playfair Display & Inter Typography, Custom SVG Film Grain Overlay
+- **Database & Queue**: MySQL / SQLite, Redis (Job Queues for Telegram Webhooks)
+- **AI Sommelier Engine**: DeepSeek-V4 API integration with custom system prompt enforcing strict JSON output
+- **Billing Gateways**: Custom S2S High-Ticket Merchant Interfaces (`EzzygateService`, `CorefyService`, `CardaqService`) with HMAC-SHA256 signature verification
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🌟 Key Features
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **24/7 Telegram Voice & Photo AI Sommelier Bot**
+   - Instant response (< 50ms) for voice notes and wine menu photos while dining at fine establishments.
+   - Decanting time recommendations, peak drinking window estimates, and Parker scale (90-100) scoring.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+2. **Cellar Portfolio & Drinking Window Engine**
+   - Bento Grid portfolio layout tracking total valuation (€), bottle counts, and average sommelier ratings.
+   - Status indicators: `🍷 Peak Drinking Window (Now)`, `⏳ Hold for Aging`, and `Ready to Drink`.
+   - Single-click CSV portfolio exporter (`/cellar/export`).
 
-## Agentic Development
+3. **Bespoke Palate Tuning Algorithm**
+   - Interactive structural sliders for Tannin, Acidity, Body, and Oak preferences (1 to 10 scale).
+   - Dynamic flavor note preset tags and custom blacklisted aromas (e.g. green tannins, over-extracted oak).
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+4. **Multi-Step Vetted Application & VIP Invites**
+   - High-craft multi-step membership application flow (`/membership/apply`).
+   - Single-use invite code claim interface (`/invite/{code}`).
+   - Admin VIP invitation generator CLI tool (`php artisan bordeux:generate-invite`).
 
+5. **Discreet S2S Billing Vault**
+   - Dynamic Monthly and Annual subscription billing with 17% annual discount.
+   - Webhook signature validation extending user membership expiry automatically.
+
+---
+
+## 🚀 Quick Setup & Installation
+
+### 1. Environment Setup
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+composer install
+npm install
+cp .env.example .env
+php artisan key:generate
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2. Configure Credentials (`.env`)
+```env
+DEEPSEEK_API_KEY=your_deepseek_api_key
+TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 
-## Contributing
+CARD_GATEWAY_EZZYGATE_KEY=ezzy_secret_key
+CARD_GATEWAY_COREFY_KEY=corefy_secret_key
+CARD_GATEWAY_CARDAQ_KEY=cardaq_secret_key
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Database Migration & Seeding
+```bash
+php artisan migrate:fresh --seed
+```
 
-## Code of Conduct
+### 4. Build Frontend Assets
+```bash
+npm run build
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 5. Launch Local Server
+```bash
+php artisan serve --port=1422
+```
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## ⚙️ Custom Artisan Commands
 
-## License
+- **Generate VIP Single-Use Invitation Code**:
+  ```bash
+  php artisan bordeux:generate-invite --days=90
+  ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Set Telegram Bot Webhook**:
+  ```bash
+  php artisan bordeux:telegram-webhook --url=https://your-domain.com/api/telegram/webhook
+  ```
+
+- **Check & Expire Outdated Memberships**:
+  ```bash
+  php artisan bordeux:check-expirations
+  ```
+
+---
+
+## 📜 Legal & Governance
+Includes full Privacy Policy, Terms of Service, and Refund Policy pages styled with Quiet Luxury aesthetic standards and sticky Table of Contents navigation.
+
+---
+
+© 2026 Bordeux AI Concierge. All rights reserved.

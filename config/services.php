@@ -35,4 +35,28 @@ return [
         ],
     ],
 
+    'deepseek' => [
+        'api_key' => env('DEEPSEEK_API_KEY'),
+        'api_url' => env('DEEPSEEK_API_URL', 'https://api.deepseek.com/v1/chat/completions'),
+        'model' => env('DEEPSEEK_MODEL', 'deepseek-chat'),
+    ],
+
+    'telegram' => [
+        'bot_token' => env('TELEGRAM_BOT_TOKEN'),
+        'webhook_url' => env('TELEGRAM_WEBHOOK_URL'),
+    ],
+
+    'ezzygate' => [
+        'api_key' => env('EZZYGATE_API_KEY'),
+        'secret_key' => env('EZZYGATE_SECRET_KEY'),
+    ],
+
+    'corefy' => [
+        'secret_key' => env('COREFY_SECRET_KEY'),
+    ],
+
+    'cardaq' => [
+        'secret_key' => env('CARDAQ_SECRET_KEY'),
+    ],
+
 ];

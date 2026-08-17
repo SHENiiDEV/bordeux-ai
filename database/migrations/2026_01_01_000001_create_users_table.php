@@ -13,16 +13,21 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('name', 200);
+            $table->string('email', 200)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('telegram_id', 200)->nullable()->index();
+            $table->string('telegram_username', 200)->nullable();
+            $table->enum('membership_status', ['pending', 'active', 'expired', 'canceled'])->default('pending');
+            $table->timestamp('expires_at')->nullable();
+            $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
+            $table->string('email', 200)->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
