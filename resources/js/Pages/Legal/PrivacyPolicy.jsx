@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
         {
             id: 'encryption',
             title: '1. AES-256 Encryption & Discretion Protocol',
-            content: `Bordeux AI operates under strict high-society discretion standards. All personal taste profiles, cellar holdings, collection valuations, and transaction logs are encrypted using AES-256 vault standards. We enforce zero data sharing or monetization with third-party advertisers.`
+            content: `Bordeux AI, operated by GREAT LEADERS LTD (Company No. 15954666), operates under strict high-society discretion standards. All personal taste profiles, cellar holdings, collection valuations, and transaction logs are encrypted using AES-256 vault standards. We enforce zero data sharing or monetization with third-party advertisers.`
         },
         {
             id: 'collection',
@@ -24,7 +24,12 @@ export default function PrivacyPolicy() {
         {
             id: 'data-rights',
             title: '4. Client Data Rights & Export',
-            content: `Members retain the absolute right to export their complete wine cellar portfolio dataset at any time, or request complete erasure ("Right to be Forgotten") by notifying their concierge representative.`
+            content: `Members retain the absolute right to export their complete wine cellar portfolio dataset at any time, or request complete erasure ("Right to be Forgotten") by notifying their concierge representative at GREAT LEADERS LTD.`
+        },
+        {
+            id: 'company-info',
+            title: '5. Data Controller Information',
+            content: `The Data Controller responsible for your personal information is GREAT LEADERS LTD, a company registered in England and Wales under Company Number 15954666. Registered Office Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA.`
         }
     ];
 
@@ -46,7 +51,7 @@ export default function PrivacyPolicy() {
                             Privacy Policy
                         </h1>
                         <p className="text-xs text-slate-300 font-light">
-                            Effective Date: January 1, 2026 • AES-256 Vault Encryption Protocol
+                            GREAT LEADERS LTD (Company No. 15954666) • Effective Date: January 1, 2026
                         </p>
                     </div>
 
@@ -105,8 +110,8 @@ export default function PrivacyPolicy() {
             {/* Footer */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 Bordeux AI Concierge. All rights reserved.</p>
-                    <div className="flex space-x-6">
+                    <p>© 2026 GREAT LEADERS LTD (Company No. 15954666). Registered Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA. All rights reserved.</p>
+                    <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="text-[#d4af37] font-semibold">Privacy Policy</Link>
                         <Link href={route('legal.refund')} className="hover:text-[#d4af37] transition">Refund Policy</Link>

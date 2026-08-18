@@ -99,9 +99,13 @@ php artisan serve --port=1422
 
 ---
 
-## 📜 Legal & Governance
-Includes full Privacy Policy, Terms of Service, and Refund Policy pages styled with Quiet Luxury aesthetic standards and sticky Table of Contents navigation.
+## 📜 Legal & Corporate Governance
+
+- **Operating Company**: GREAT LEADERS LTD
+- **Company Number**: 15954666 (Registered in England & Wales)
+- **Registered Office Address**: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA
+- **Legal Compliance**: Full Privacy Policy, Terms of Service, and Refund Policy pages styled with Quiet Luxury aesthetic standards and sticky Table of Contents navigation.
 
 ---
 
-© 2026 Bordeux AI Concierge. All rights reserved.
+© 2026 GREAT LEADERS LTD (Company No. 15954666). All rights reserved.

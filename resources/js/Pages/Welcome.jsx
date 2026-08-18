@@ -454,8 +454,8 @@ export default function Welcome({ canApply }) {
             {/* FOOTER */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 Bordeux AI Concierge. All rights reserved.</p>
-                    <div className="flex space-x-6">
+                    <p>© 2026 GREAT LEADERS LTD (Company No. 15954666). Registered Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA. All rights reserved.</p>
+                    <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>
                         <Link href={route('legal.refund')} className="hover:text-[#d4af37] transition">Refund Policy</Link>

@@ -18,8 +18,8 @@ export default function TermsOfService() {
         },
         {
             id: 'billing',
-            title: '3. High-Ticket S2S Billing & Settlement Terms',
-            content: `Memberships are billed on a recurring monthly or annual basis as selected in your Membership Concierge dashboard. Transactions are processed via encrypted Server-to-Server (S2S) merchant gateways (including Ezzygate, Corefy, and Cardaq) with 256-bit signature validation. Annual subscriptions include a 17% fee discount. Subscriptions automatically renew unless cancelled at least 48 hours prior to the billing date.`
+            title: '3. High-Ticket Billing & Settlement Terms',
+            content: `Memberships are billed on a recurring monthly or annual basis as selected in your Membership Concierge dashboard. Annual subscriptions include a 17% fee discount. Subscriptions automatically renew unless cancelled at least 48 hours prior to the billing date.`
         },
         {
             id: 'cellar-data',
@@ -35,6 +35,11 @@ export default function TermsOfService() {
             id: 'governing-law',
             title: '6. Governing Law & Dispute Resolution',
             content: `These Terms of Service are governed by and construed in accordance with international commercial law. Any disputes or claims arising out of membership or service usage shall be settled through confidential binding arbitration.`
+        },
+        {
+            id: 'company-info',
+            title: '7. Corporate Entity & Registered Details',
+            content: `Bordeux AI is owned and operated by GREAT LEADERS LTD, a limited liability company incorporated in England and Wales under Company Number 15954666. Registered Office Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA.`
         }
     ];
 
@@ -56,7 +61,7 @@ export default function TermsOfService() {
                             Terms of Service
                         </h1>
                         <p className="text-xs text-slate-300 font-light">
-                            Effective Date: January 1, 2026 • Private Club Membership Agreement
+                            GREAT LEADERS LTD (Company No. 15954666) • Effective Date: January 1, 2026
                         </p>
                     </div>
 
@@ -115,8 +120,8 @@ export default function TermsOfService() {
             {/* Footer */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 Bordeux AI Concierge. All rights reserved.</p>
-                    <div className="flex space-x-6">
+                    <p>© 2026 GREAT LEADERS LTD (Company No. 15954666). Registered Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA. All rights reserved.</p>
+                    <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="text-[#d4af37] font-semibold">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>
                         <Link href={route('legal.refund')} className="hover:text-[#d4af37] transition">Refund Policy</Link>

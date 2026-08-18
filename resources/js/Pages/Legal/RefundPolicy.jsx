@@ -9,7 +9,7 @@ export default function RefundPolicy() {
         {
             id: 'satisfaction-guarantee',
             title: '1. 14-Day Concierge Satisfaction Guarantee',
-            content: `We stand behind the craftsmanship and intelligence of Bordeux AI. If you are not completely satisfied with your AI Sommelier access or membership concierge experience within the first 14 calendar days of your initial subscription activation, your concierge representative will process a 100% refund of your initial fee.`
+            content: `GREAT LEADERS LTD stands behind the craftsmanship and intelligence of Bordeux AI. If you are not completely satisfied with your AI Sommelier access or membership concierge experience within the first 14 calendar days of your initial subscription activation, your concierge representative will process a 100% refund of your initial fee.`
         },
         {
             id: 'cancellation-terms',
@@ -19,12 +19,17 @@ export default function RefundPolicy() {
         {
             id: 'refund-processing',
             title: '3. Gateway Refund Settlement Process',
-            content: `Approved refund requests are returned directly to the original S2S payment merchant source (Ezzygate, Corefy, or Cardaq). Credit card and vault bank settlements typically settle within 3 to 5 business days depending on your financial institution.`
+            content: `Approved refund requests are returned directly to the original payment source. Bank settlements typically process within 3 to 5 business days depending on your financial institution.`
         },
         {
             id: 'bespoke-services',
             title: '4. Non-Refundable Custom Sourcing Services',
             content: `Fees paid for bespoke human sommelier vault sourcing, private auction acquisitions, or rare vintage shipping logistics once physical procurement has commenced are non-refundable.`
+        },
+        {
+            id: 'company-info',
+            title: '5. Corporate Entity & Support Address',
+            content: `Refund requests and billing inquiries are processed by GREAT LEADERS LTD (Company No. 15954666). Registered Office Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA.`
         }
     ];
 
@@ -46,7 +51,7 @@ export default function RefundPolicy() {
                             Refund & Cancellation Policy
                         </h1>
                         <p className="text-xs text-slate-300 font-light">
-                            Effective Date: January 1, 2026 • Premium Member Satisfaction Assurance
+                            GREAT LEADERS LTD (Company No. 15954666) • Effective Date: January 1, 2026
                         </p>
                     </div>
 
@@ -105,8 +110,8 @@ export default function RefundPolicy() {
             {/* Footer */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 Bordeux AI Concierge. All rights reserved.</p>
-                    <div className="flex space-x-6">
+                    <p>© 2026 GREAT LEADERS LTD (Company No. 15954666). Registered Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA. All rights reserved.</p>
+                    <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>
                         <Link href={route('legal.refund')} className="text-[#d4af37] font-semibold">Refund Policy</Link>
