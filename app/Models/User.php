@@ -19,8 +19,16 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
         'email',
         'password',
+        'phone_number',
+        'date_of_birth',
+        'address_street',
+        'address_city',
+        'address_country',
+        'address_postcode',
+        'agreed_to_terms',
         'telegram_id',
         'telegram_username',
         'membership_status',
@@ -48,6 +56,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'date_of_birth' => 'date',
+            'agreed_to_terms' => 'boolean',
             'expires_at' => 'datetime',
             'is_admin' => 'boolean',
         ];

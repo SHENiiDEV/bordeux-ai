@@ -22,6 +22,14 @@ return new class extends Migration
             $table->enum('membership_status', ['pending', 'active', 'expired', 'canceled'])->default('pending');
             $table->timestamp('expires_at')->nullable();
             $table->boolean('is_admin')->default(false);
+            $table->string('surname', 200)->nullable();
+            $table->string('phone_number', 50)->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('address_street', 255)->nullable();
+            $table->string('address_city', 100)->nullable();
+            $table->string('address_country', 100)->nullable();
+            $table->string('address_postcode', 50)->nullable();
+            $table->boolean('agreed_to_terms')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
