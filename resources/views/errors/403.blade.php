@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css'])
+    @vite(['resources/js/app.jsx'])
 </head>
 <body class="bg-[#0a0a0a] bg-grain text-slate-100 min-h-screen flex items-center justify-center p-4">
     <div class="glass-panel-burgundy max-w-lg w-full p-8 sm:p-12 rounded-3xl border border-[#d4af37]/30 text-center space-y-6 shadow-2xl">
