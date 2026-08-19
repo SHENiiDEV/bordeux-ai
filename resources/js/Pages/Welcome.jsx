@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import { Head, Link } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
+import { useCurrency } from '../Components/CurrencyContext';
 import { 
     Wine, ShieldCheck, Bot, Sparkles, Lock, ArrowRight, CheckCircle2, 
-    Zap, Award, Sliders, Globe, Clock, ChevronRight, MessageSquareText, FileText 
+    Zap, Award, Sliders, Globe, Clock, ChevronRight, MessageSquareText, FileText,
+    Volume2, Mic, Play, Pause
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Welcome({ canApply }) {
     const [activeTab, setActiveTab] = useState('telegram');
     const [billingCycle, setBillingCycle] = useState('annual'); // 'monthly' | 'annual'
+    const [isPlayingVoice, setIsPlayingVoice] = useState(false);
+    const { formatPrice } = useCurrency();
 
     const clubPrivileges = [
         {
@@ -20,7 +24,7 @@ export default function Welcome({ canApply }) {
             icon: Bot,
             description: 'Send voice notes or photos of wine lists while dining at Michelin-starred restaurants. Bordeux AI analyzes dish profiles, vintage ratings, and decanting durations within milliseconds.',
             highlights: [
-                'Voice note pairing requests in English & French',
+                'Voice note pairing requests in English, French & German',
                 'Instant decanting duration advice prior to serving',
                 'Vintage weather condition & Parker scale (90-100) scoring'
             ]
@@ -51,12 +55,12 @@ export default function Welcome({ canApply }) {
         },
         {
             id: 'billing',
-            title: 'Discreet S2S Payment Vault',
-            subtitle: 'High-Ticket Merchant Direct Concierge',
+            title: 'Discreet Billing Vault',
+            subtitle: 'High-Ticket Direct Merchant Access',
             icon: Lock,
-            description: 'Vetted club memberships processed via custom high-ticket merchant APIs (Ezzygate, Corefy, Cardaq) with 256-bit S2S signature encryption and zero third-party tracking.',
+            description: 'Vetted club memberships processed via custom high-ticket merchant APIs with 256-bit signature encryption and zero third-party tracking.',
             highlights: [
-                'Direct S2S signature validation protocol',
+                'Direct signature validation protocol',
                 'Flexible monthly or annual concierge billing',
                 'Strict client anonymity and data privacy'
             ]
@@ -66,8 +70,8 @@ export default function Welcome({ canApply }) {
     const tiers = [
         {
             name: 'Reserve Concierge',
-            monthlyPrice: '€250',
-            annualPrice: '€2,500',
+            monthlyEur: 250,
+            annualEur: 2500,
             description: 'Essential access for growing collectors and wine enthusiasts.',
             features: [
                 'Telegram AI Sommelier (Text queries)',
@@ -80,8 +84,8 @@ export default function Welcome({ canApply }) {
         },
         {
             name: 'Grand Cru Tier',
-            monthlyPrice: '€500',
-            annualPrice: '€5,000',
+            monthlyEur: 500,
+            annualEur: 5000,
             description: 'Full sommelier intelligence and priority concierge support.',
             features: [
                 'Unlimited Telegram Voice & Photo AI Querying',
@@ -95,8 +99,8 @@ export default function Welcome({ canApply }) {
         },
         {
             name: 'Rare Vintage Vault',
-            monthlyPrice: '€1,200',
-            annualPrice: '€12,000',
+            monthlyEur: 1200,
+            annualEur: 12000,
             description: 'Bespoke human + AI concierge for world-class collectors.',
             features: [
                 'Dedicated Human Sommelier Concierge',
@@ -285,13 +289,13 @@ export default function Welcome({ canApply }) {
                 </div>
             </section>
 
-            {/* SOMMELIER DEMONSTRATION SHOWCASE */}
+            {/* SOMMELIER DEMONSTRATION & VOICE SIMULATOR SHOWCASE */}
             <section className="py-24 border-b border-[#d4af37]/15 bg-[#070707]/90">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                     <div className="text-center max-w-2xl mx-auto space-y-3">
-                        <span className="text-xs uppercase font-bold tracking-widest text-[#d4af37]">Dialogue Sample</span>
-                        <h2 className="font-serif-luxury text-3xl font-bold text-white">Experience Bordeux AI Consultation</h2>
-                        <p className="text-xs text-slate-400">Sample sommelier response formatted for fine dining</p>
+                        <span className="text-xs uppercase font-bold tracking-widest text-[#d4af37]">Voice Consultation Demo</span>
+                        <h2 className="font-serif-luxury text-3xl font-bold text-white">Experience Bordeux AI Voice Consultation</h2>
+                        <p className="text-xs text-slate-400">Simulated Telegram voice note pairing for fine dining</p>
                     </div>
 
                     <div className="max-w-3xl mx-auto glass-panel p-8 rounded-3xl border border-[#d4af37]/25 space-y-6">
@@ -300,12 +304,42 @@ export default function Welcome({ canApply }) {
                             <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xs font-bold text-slate-300">
                                 VIP
                             </div>
-                            <div className="flex-1 bg-[#120d12] p-4 rounded-2xl border border-slate-800 text-xs text-slate-200">
-                                "I am at Le Jules Verne in Paris having roasted pigeon with winter black truffles. Recommend a bottle from my Grand Cru profile under €3,000."
+                            <div className="flex-1 bg-[#120d12] p-4 rounded-2xl border border-slate-800 text-xs text-slate-200 flex items-center justify-between">
+                                <span>"I am at Le Jules Verne in Paris having roasted pigeon with winter black truffles. Recommend a bottle from my Grand Cru profile under €3,000."</span>
+                                <Mic className="w-4 h-4 text-[#d4af37] shrink-0 ml-2" />
                             </div>
                         </div>
 
-                        {/* AI Sommelier Answer */}
+                        {/* Interactive Voice Player Simulator */}
+                        <div className="p-4 rounded-2xl bg-[#070707] border border-[#d4af37]/30 flex items-center space-x-4">
+                            <button
+                                onClick={() => setIsPlayingVoice(!isPlayingVoice)}
+                                className="w-10 h-10 rounded-full bg-[#4a0e17] border border-[#d4af37] flex items-center justify-center text-[#f3cf65] shrink-0 hover:scale-105 transition"
+                            >
+                                {isPlayingVoice ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
+                            </button>
+
+                            <div className="flex-1 space-y-1">
+                                <div className="flex items-center justify-between text-[11px] text-slate-400">
+                                    <span className="font-semibold text-[#f3cf65]">Sommelier Voice Note Response</span>
+                                    <span>0:28 / 0:28</span>
+                                </div>
+
+                                <div className="flex items-center space-x-1 h-5">
+                                    {[30, 60, 45, 90, 70, 100, 50, 85, 40, 95, 60, 75, 40, 80, 50, 90, 65, 30].map((h, idx) => (
+                                        <div
+                                            key={idx}
+                                            style={{ height: `${h}%` }}
+                                            className={`flex-1 rounded-full transition-all duration-300 ${
+                                                isPlayingVoice ? 'bg-[#d4af37] animate-pulse' : 'bg-slate-800'
+                                            }`}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* AI Sommelier Answer Text */}
                         <div className="flex items-start space-x-4">
                             <div className="w-8 h-8 rounded-full bg-[#4a0e17] border border-[#d4af37]/40 flex items-center justify-center text-xs font-bold text-[#f3cf65]">
                                 AI
@@ -370,7 +404,8 @@ export default function Welcome({ canApply }) {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {tiers.map((t, idx) => {
-                            const priceDisplay = billingCycle === 'annual' ? t.annualPrice : t.monthlyPrice;
+                            const eurAmount = billingCycle === 'annual' ? t.annualEur : t.monthlyEur;
+                            const priceDisplay = formatPrice(eurAmount);
                             const periodLabel = billingCycle === 'annual' ? '/ year' : '/ month';
 
                             return (
