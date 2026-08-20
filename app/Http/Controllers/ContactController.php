@@ -15,7 +15,6 @@ class ContactController extends Controller
             'companyName' => env('COMPANY_NAME', 'GREAT LEADERS LTD'),
             'companyAddress' => env('COMPANY_ADDRESS', 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'),
             'companyEmail' => env('COMPANY_EMAIL', 'info@bordeux.co.uk'),
-            'companyPhone' => env('COMPANY_PHONE', '+44 20 7946 0912'),
             'companyTaxId' => env('COMPANY_TAX_ID', 'Company No. 15954666'),
             'supportEmail' => env('MAIL_FROM_ADDRESS', 'support@fitninja.co.uk'),
         ];

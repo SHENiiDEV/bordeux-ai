@@ -2,10 +2,10 @@ import React from 'react';
 import { Head, useForm, Link } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
-import { Mail, Building2, MapPin, Phone, Send, CheckCircle2, ShieldCheck, FileText } from 'lucide-react';
+import { Mail, Building2, MapPin, Send, CheckCircle2, ShieldCheck, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function Contact({ companyName, companyAddress, companyEmail, companyPhone, companyTaxId, supportEmail }) {
+export default function Contact({ companyName, companyAddress, companyEmail, companyTaxId, supportEmail }) {
     const { data, setData, post, processing, errors, recentlySuccessful, reset } = useForm({
         name: '',
         email: '',
@@ -86,18 +86,6 @@ export default function Contact({ companyName, companyAddress, companyEmail, com
                                         <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Corporate Email</span>
                                         <a href={`mailto:${companyEmail || 'info@bordeux.co.uk'}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
                                             {companyEmail || 'info@bordeux.co.uk'}
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start space-x-4">
-                                    <div className="p-3 rounded-2xl bg-[#4a0e17] border border-[#d4af37]/30 text-[#f3cf65] shrink-0">
-                                        <Phone className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Corporate Telephone</span>
-                                        <a href={`tel:${companyPhone || '+44 20 7946 0912'}`} className="font-bold text-white text-sm hover:underline block">
-                                            {companyPhone || '+44 20 7946 0912'}
                                         </a>
                                     </div>
                                 </div>

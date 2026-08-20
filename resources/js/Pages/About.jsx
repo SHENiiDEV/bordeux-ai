@@ -2,10 +2,10 @@ import React from 'react';
 import { Head, Link } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
-import { Wine, Award, ShieldCheck, Sparkles, Building2, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
+import { Wine, Award, ShieldCheck, Sparkles, Building2, MapPin, Mail, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function About({ companyName, companyAddress, companyEmail, companyPhone, companyTaxId }) {
+export default function About({ companyName, companyAddress, companyEmail, companyTaxId }) {
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-slate-100 flex flex-col font-sans selection:bg-[#4a0e17] selection:text-white">
             <Head title="About Us — Bordeux AI Private Club" />
@@ -88,17 +88,10 @@ export default function About({ companyName, companyAddress, companyEmail, compa
                             </p>
                         </div>
 
-                        <div className="space-y-1">
+                        <div className="space-y-1 sm:col-span-2">
                             <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Corporate Email</span>
                             <a href={`mailto:${companyEmail || 'info@bordeux.co.uk'}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
                                 {companyEmail || 'info@bordeux.co.uk'}
-                            </a>
-                        </div>
-
-                        <div className="space-y-1">
-                            <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Corporate Telephone</span>
-                            <a href={`tel:${companyPhone || '+44 20 7946 0912'}`} className="font-bold text-white text-sm hover:underline block">
-                                {companyPhone || '+44 20 7946 0912'}
                             </a>
                         </div>
                     </div>
