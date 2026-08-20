@@ -28,49 +28,95 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Navigation Links */}
-                    {user ? (
-                        <div className="hidden md:flex items-center space-x-8 text-sm font-medium">
-                            <Link 
-                                href={route('dashboard')}
-                                className={`flex items-center space-x-2 text-slate-300 hover:text-[#d4af37] transition ${route().current('dashboard') ? 'text-[#d4af37] font-semibold' : ''}`}
-                            >
-                                <Sparkles className="w-4 h-4 text-[#d4af37]" />
-                                <span>Sommelier</span>
-                            </Link>
+                    <div className="hidden md:flex items-center space-x-6 text-xs sm:text-sm font-medium">
+                        {user ? (
+                            <>
+                                <Link 
+                                    href={route('dashboard')}
+                                    className={`flex items-center space-x-1.5 text-slate-300 hover:text-[#d4af37] transition ${route().current('dashboard') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <Sparkles className="w-4 h-4 text-[#d4af37]" />
+                                    <span>Sommelier</span>
+                                </Link>
 
-                            <Link 
-                                href={route('cellar.index')}
-                                className={`flex items-center space-x-2 text-slate-300 hover:text-[#d4af37] transition ${route().current('cellar.*') ? 'text-[#d4af37] font-semibold' : ''}`}
-                            >
-                                <Wine className="w-4 h-4" />
-                                <span>My Cellar</span>
-                            </Link>
+                                <Link 
+                                    href={route('cellar.index')}
+                                    className={`flex items-center space-x-1.5 text-slate-300 hover:text-[#d4af37] transition ${route().current('cellar.*') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <Wine className="w-4 h-4" />
+                                    <span>Cellar</span>
+                                </Link>
 
-                            <Link 
-                                href={route('taste-profile.show')}
-                                className={`flex items-center space-x-2 text-slate-300 hover:text-[#d4af37] transition ${route().current('taste-profile.*') ? 'text-[#d4af37] font-semibold' : ''}`}
-                            >
-                                <Sliders className="w-4 h-4" />
-                                <span>Taste Profile</span>
-                            </Link>
+                                <Link 
+                                    href={route('taste-profile.show')}
+                                    className={`flex items-center space-x-1.5 text-slate-300 hover:text-[#d4af37] transition ${route().current('taste-profile.*') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <Sliders className="w-4 h-4" />
+                                    <span>Taste</span>
+                                </Link>
 
-                            <Link 
-                                href={route('billing.index')}
-                                className={`flex items-center space-x-2 text-slate-300 hover:text-[#d4af37] transition ${route().current('billing.*') ? 'text-[#d4af37] font-semibold' : ''}`}
-                            >
-                                <CreditCard className="w-4 h-4" />
-                                <span>Membership</span>
-                            </Link>
+                                <Link 
+                                    href={route('billing.index')}
+                                    className={`flex items-center space-x-1.5 text-slate-300 hover:text-[#d4af37] transition ${route().current('billing.*') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <CreditCard className="w-4 h-4" />
+                                    <span>Membership</span>
+                                </Link>
 
-                            <Link 
-                                href={route('wallet.index')}
-                                className={`flex items-center space-x-2 text-slate-300 hover:text-[#d4af37] transition ${route().current('wallet.*') ? 'text-[#d4af37] font-semibold' : ''}`}
-                            >
-                                <Wallet className="w-4 h-4 text-[#d4af37]" />
-                                <span>Wallet & Invoices</span>
-                            </Link>
-                        </div>
-                    ) : null}
+                                <Link 
+                                    href={route('wallet.index')}
+                                    className={`flex items-center space-x-1.5 text-slate-300 hover:text-[#d4af37] transition ${route().current('wallet.*') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <Wallet className="w-4 h-4 text-[#d4af37]" />
+                                    <span>Wallet</span>
+                                </Link>
+
+                                <Link 
+                                    href={route('how-it-works')}
+                                    className={`text-slate-400 hover:text-[#d4af37] transition ${route().current('how-it-works') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <span>How It Works</span>
+                                </Link>
+
+                                <Link 
+                                    href={route('support')}
+                                    className={`text-slate-400 hover:text-[#d4af37] transition ${route().current('support') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <span>Support</span>
+                                </Link>
+                            </>
+                        ) : (
+                            <>
+                                <Link 
+                                    href={route('how-it-works')}
+                                    className={`text-slate-300 hover:text-[#d4af37] transition ${route().current('how-it-works') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <span>How It Works</span>
+                                </Link>
+
+                                <Link 
+                                    href={route('about')}
+                                    className={`text-slate-300 hover:text-[#d4af37] transition ${route().current('about') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <span>About Us</span>
+                                </Link>
+
+                                <Link 
+                                    href={route('support')}
+                                    className={`text-slate-300 hover:text-[#d4af37] transition ${route().current('support') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <span>Support</span>
+                                </Link>
+
+                                <Link 
+                                    href={route('contact')}
+                                    className={`text-slate-300 hover:text-[#d4af37] transition ${route().current('contact') ? 'text-[#d4af37] font-semibold' : ''}`}
+                                >
+                                    <span>Contact</span>
+                                </Link>
+                            </>
+                        )}
+                    </div>
 
                     {/* Right Controls (Desktop User Info & Mobile Hamburger) */}
                     <div className="flex items-center space-x-4">
