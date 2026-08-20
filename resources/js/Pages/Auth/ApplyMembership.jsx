@@ -89,7 +89,7 @@ export default function ApplyMembership() {
                             </div>
                             <h3 className="font-serif-luxury text-2xl font-bold text-white">Application Received</h3>
                             <p className="text-xs text-slate-300 leading-relaxed max-w-md mx-auto">
-                                Your application has been logged for concierge vetting. If approved, a single-use invitation token will be sent directly to your Telegram or email within 24 hours.
+                                Your application has been logged for concierge vetting. If approved, a single-use invitation token will be sent directly to your Telegram or email within 24-48 hours.
                             </p>
                         </motion.div>
                     ) : (
@@ -284,7 +284,7 @@ export default function ApplyMembership() {
 
                                     <div className="p-4 rounded-xl bg-[#070707] border border-slate-800 text-[11px] text-slate-400 flex items-center space-x-3">
                                         <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
-                                        <span>Applications are reviewed individually within 24 hours under AES-256 privacy protection.</span>
+                                        <span>Applications are reviewed individually within 24-48 hours under AES-256 privacy protection.</span>
                                     </div>
 
                                     <div className="pt-4 flex justify-between">

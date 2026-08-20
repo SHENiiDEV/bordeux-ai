@@ -42,7 +42,7 @@ export default function Contact({ companyName, companyNumber, companyAddress, su
                         Contact Executive Concierge
                     </h1>
                     <p className="text-slate-300 text-sm sm:text-base font-light max-w-xl mx-auto">
-                        Have inquiries regarding bespoke sommelier consultation, corporate B2B invoicing, or high-ticket vault management? Our team responds within 24 hours.
+                        Have inquiries regarding bespoke sommelier consultation, corporate B2B invoicing, or high-ticket vault management? Our team responds within 24-48 hours.
                     </p>
                 </div>
 
@@ -61,8 +61,8 @@ export default function Contact({ companyName, companyNumber, companyAddress, su
                                     </div>
                                     <div>
                                         <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Operating Corporate Entity</span>
-                                        <span className="font-bold text-white text-sm">{companyName || 'CHANGE IT UP SERVICES LTD'}</span>
-                                        <p className="text-[#d4af37] text-[11px] font-semibold mt-0.5">Company Reg No: {companyNumber || '16107295'}</p>
+                                        <span className="font-bold text-white text-sm">{companyName || 'GREAT LEADERS LTD'}</span>
+                                        <p className="text-[#d4af37] text-[11px] font-semibold mt-0.5">Company Reg No: {companyNumber || '15954666'}</p>
                                     </div>
                                 </div>
 
@@ -73,7 +73,7 @@ export default function Contact({ companyName, companyNumber, companyAddress, su
                                     <div>
                                         <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Registered Office Address</span>
                                         <p className="font-medium text-slate-200 leading-relaxed mt-0.5">
-                                            {companyAddress || '14 Broadway, Nottingham, United Kingdom, NG1 1PS'}
+                                            {companyAddress || 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'}
                                         </p>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@ export default function Contact({ companyName, companyNumber, companyAddress, su
                         <div className="glass-panel-burgundy p-6 rounded-3xl border border-[#d4af37]/30 text-xs space-y-2">
                             <div className="flex items-center space-x-2 text-[#f3cf65] font-bold">
                                 <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
-                                <span>24-Hour SLA Support Guarantee</span>
+                                <span>24-48-Hour SLA Support Guarantee</span>
                             </div>
                             <p className="text-slate-300 font-light leading-relaxed">
                                 All member inquiries submitted through this form are assigned a unique support ticket reference and processed under AES-256 privacy protection.

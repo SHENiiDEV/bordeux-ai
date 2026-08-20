@@ -41,7 +41,7 @@ class ContactController extends Controller
             \Log::error("Failed to send ContactMessageMail: " . $e->getMessage());
         }
 
-        return redirect()->back()->with('success', 'Your support ticket inquiry has been received. Our concierge team will respond within 24 hours.');
+        return redirect()->back()->with('success', 'Your support ticket inquiry has been received. Our concierge team will respond within 24-48 hours.');
     }
 
     public function showHowItWorks()

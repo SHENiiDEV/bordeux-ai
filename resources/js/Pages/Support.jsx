@@ -11,7 +11,7 @@ export default function Support({ companyName, companyNumber, companyAddress, su
     const supportChannels = [
         {
             title: 'Executive Email Support',
-            subtitle: '24-Hour SLA Direct Response',
+            subtitle: '24-48-Hour SLA Direct Response',
             icon: Mail,
             actionText: `Email ${supportEmail || 'support@fitninja.co.uk'}`,
             actionUrl: `mailto:${supportEmail || 'support@fitninja.co.uk'}`,
