@@ -23,6 +23,13 @@ Route::prefix('legal')->name('legal.')->group(function () {
     Route::get('/refund', [LegalController::class, 'refund'])->name('refund');
 });
 
+// Public Informational & Support Routes
+Route::get('/how-it-works', [\App\Http\Controllers\ContactController::class, 'showHowItWorks'])->name('how-it-works');
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'showContact'])->name('contact');
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'submitContact'])->name('contact.submit');
+Route::get('/support', [\App\Http\Controllers\ContactController::class, 'showSupport'])->name('support');
+Route::get('/about', [\App\Http\Controllers\ContactController::class, 'showAbout'])->name('about');
+
 // Phase 1 Private Membership Apply & Invite Routes
 Route::get('/membership/apply', [MembershipApplicationController::class, 'create'])->name('membership.apply');
 Route::post('/membership/apply', [MembershipApplicationController::class, 'store'])->name('membership.apply.store');

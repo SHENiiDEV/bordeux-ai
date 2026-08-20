@@ -245,22 +245,93 @@ export default function Navbar() {
                                                 </div>
                                                 <ChevronRight className="w-4 h-4 text-slate-500" />
                                             </Link>
+                                            <Link
+                                                href={route('how-it-works')}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                            >
+                                                <span>How It Works</span>
+                                                <ChevronRight className="w-4 h-4 text-slate-500" />
+                                            </Link>
+
+                                            <Link
+                                                href={route('about')}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                            >
+                                                <span>About Us</span>
+                                                <ChevronRight className="w-4 h-4 text-slate-500" />
+                                            </Link>
+
+                                            <Link
+                                                href={route('support')}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                            >
+                                                <span>Support & Help Desk</span>
+                                                <ChevronRight className="w-4 h-4 text-slate-500" />
+                                            </Link>
+
+                                            <Link
+                                                href={route('contact')}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                            >
+                                                <span>Contact Support</span>
+                                                <ChevronRight className="w-4 h-4 text-slate-500" />
+                                            </Link>
                                         </>
                                     ) : (
                                         <>
                                             <Link
                                                 href={route('home')}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className="flex items-center justify-between p-3.5 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
                                             >
                                                 <span>Private Club Home</span>
                                                 <ChevronRight className="w-4 h-4 text-slate-500" />
                                             </Link>
 
                                             <Link
+                                                href={route('how-it-works')}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                            >
+                                                <span>How It Works</span>
+                                                <ChevronRight className="w-4 h-4 text-slate-500" />
+                                            </Link>
+
+                                            <Link
+                                                href={route('about')}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                            >
+                                                <span>About Us</span>
+                                                <ChevronRight className="w-4 h-4 text-slate-500" />
+                                            </Link>
+
+                                            <Link
+                                                href={route('support')}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                            >
+                                                <span>Support & Help Desk</span>
+                                                <ChevronRight className="w-4 h-4 text-slate-500" />
+                                            </Link>
+
+                                            <Link
+                                                href={route('contact')}
+                                                onClick={() => setMobileMenuOpen(false)}
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                            >
+                                                <span>Contact Support</span>
+                                                <ChevronRight className="w-4 h-4 text-slate-500" />
+                                            </Link>
+
+                                            <Link
                                                 href={route('login')}
                                                 onClick={() => setMobileMenuOpen(false)}
-                                                className="flex items-center justify-between p-3.5 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
+                                                className="flex items-center justify-between p-3 rounded-xl bg-[#070707]/50 border border-slate-800 text-slate-300"
                                             >
                                                 <span>Member Sign In</span>
                                                 <ChevronRight className="w-4 h-4 text-slate-500" />
