@@ -14,8 +14,8 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-20">
                     {/* Brand Header */}
                     <Link href={user ? route('dashboard') : route('home')} className="flex items-center space-x-3 group">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#4a0e17] to-[#160609] border border-[#d4af37]/30 flex items-center justify-center text-[#d4af37] group-hover:border-[#d4af37] transition-all">
-                            <Wine className="w-5 h-5" />
+                        <div className="w-10 h-10 rounded-xl overflow-hidden border border-[#d4af37]/40 group-hover:border-[#d4af37] transition-all shadow-lg shrink-0">
+                            <img src="/favicon.png" alt="Bordeux AI Logo" className="w-full h-full object-cover" />
                         </div>
                         <div>
                             <span className="font-serif-luxury text-xl font-bold tracking-wider text-white">
@@ -183,12 +183,12 @@ export default function Navbar() {
                             {/* Drawer Top Header */}
                             <div className="space-y-6">
                                 <div className="flex items-center justify-between border-b border-[#d4af37]/20 pb-4">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="w-9 h-9 rounded-xl bg-[#4a0e17] border border-[#d4af37] flex items-center justify-center text-[#f3cf65]">
-                                            <Wine className="w-4 h-4" />
-                                        </div>
-                                        <span className="font-serif-luxury font-bold text-white text-base">BORDEUX AI</span>
-                                    </div>
+                                     <div className="flex items-center space-x-3">
+                                         <div className="w-9 h-9 rounded-xl overflow-hidden border border-[#d4af37] shadow-lg shrink-0">
+                                             <img src="/favicon.png" alt="Bordeux AI Logo" className="w-full h-full object-cover" />
+                                         </div>
+                                         <span className="font-serif-luxury font-bold text-white text-base">BORDEUX AI</span>
+                                     </div>
 
                                     <button
                                         onClick={() => setMobileMenuOpen(false)}
