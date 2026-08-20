@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Head, Link } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
-import { Mail, CreditCard, Bot, HelpCircle, ChevronDown, ChevronUp, ArrowRight, ShieldCheck, FileText } from 'lucide-react';
+import { Mail, CreditCard, Bot, HelpCircle, ChevronDown, ChevronUp, ArrowRight, ShieldCheck, FileText, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Support({ companyName, companyNumber, companyAddress, supportEmail }) {
+export default function Support({ companyName, companyAddress, companyEmail, companyPhone, companyTaxId, supportEmail }) {
     const [openFaq, setOpenFaq] = useState(0);
 
     const supportChannels = [
@@ -13,8 +13,8 @@ export default function Support({ companyName, companyNumber, companyAddress, su
             title: 'Executive Email Support',
             subtitle: '24-48-Hour SLA Direct Response',
             icon: Mail,
-            actionText: `Email ${supportEmail || 'support@fitninja.co.uk'}`,
-            actionUrl: `mailto:${supportEmail || 'support@fitninja.co.uk'}`,
+            actionText: `Email ${companyEmail || 'info@bordeux.co.uk'}`,
+            actionUrl: `mailto:${companyEmail || 'info@bordeux.co.uk'}`,
             isExternal: true,
             desc: 'Direct line to our senior sommelier & technical support concierges.'
         },
@@ -49,7 +49,7 @@ export default function Support({ companyName, companyNumber, companyAddress, su
         },
         {
             q: 'How are official B2B PDF tax invoices generated?',
-            a: `For every wallet top-up or service deduction, an official PDF receipt is generated in-memory by our DomPDF engine. Invoices display complete merchant of record details (${companyName || 'GREAT LEADERS LTD'}, UK Co. No. ${companyNumber || '15954666'}), line item breakdowns, and 0% UK B2B Reverse Charge tax status. Invoices can be downloaded at any time from your Wallet & Invoices dashboard.`
+            a: `For every wallet top-up or service deduction, an official PDF receipt is generated in-memory by our DomPDF engine. Invoices display complete merchant of record details (${companyName || 'GREAT LEADERS LTD'}, ${companyTaxId || 'Company No. 15954666'}), line item breakdowns, and 0% UK B2B Reverse Charge tax status. Invoices can be downloaded at any time from your Wallet & Invoices dashboard.`
         },
         {
             q: 'Can I set custom taste filters (e.g. excluding green tannins or oak)?',
@@ -204,7 +204,7 @@ export default function Support({ companyName, companyNumber, companyAddress, su
             {/* FOOTER */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 {companyName || 'CHANGE IT UP SERVICES LTD'} (Company No. {companyNumber || '16107295'}). All rights reserved.</p>
+                    <p>© 2026 {companyName || 'GREAT LEADERS LTD'} ({companyTaxId || 'Company No. 15954666'}). All rights reserved.</p>
                     <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>

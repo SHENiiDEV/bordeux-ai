@@ -2,10 +2,10 @@ import React from 'react';
 import { Head, Link } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
-import { Wine, Award, ShieldCheck, Sparkles, Building2, MapPin, ArrowRight } from 'lucide-react';
+import { Wine, Award, ShieldCheck, Sparkles, Building2, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function About({ companyName, companyNumber, companyAddress, supportEmail }) {
+export default function About({ companyName, companyAddress, companyEmail, companyPhone, companyTaxId }) {
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-slate-100 flex flex-col font-sans selection:bg-[#4a0e17] selection:text-white">
             <Head title="About Us — Bordeux AI Private Club" />
@@ -77,15 +77,29 @@ export default function About({ companyName, companyNumber, companyAddress, supp
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs">
                         <div className="space-y-1">
                             <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Company Legal Name</span>
-                            <p className="font-bold text-white text-sm">{companyName || 'CHANGE IT UP SERVICES LTD'}</p>
-                            <p className="text-[#d4af37] font-semibold text-[11px]">Company Reg No: {companyNumber || '16107295'}</p>
+                            <p className="font-bold text-white text-sm">{companyName || 'GREAT LEADERS LTD'}</p>
+                            <p className="text-[#d4af37] font-semibold text-[11px]">{companyTaxId || 'Company No. 15954666'}</p>
                         </div>
 
                         <div className="space-y-1">
                             <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Registered Office Address</span>
                             <p className="font-medium text-slate-200 leading-relaxed">
-                                {companyAddress || '14 Broadway, Nottingham, United Kingdom, NG1 1PS'}
+                                {companyAddress || 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'}
                             </p>
+                        </div>
+
+                        <div className="space-y-1">
+                            <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Corporate Email</span>
+                            <a href={`mailto:${companyEmail || 'info@bordeux.co.uk'}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
+                                {companyEmail || 'info@bordeux.co.uk'}
+                            </a>
+                        </div>
+
+                        <div className="space-y-1">
+                            <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Corporate Telephone</span>
+                            <a href={`tel:${companyPhone || '+44 20 7946 0912'}`} className="font-bold text-white text-sm hover:underline block">
+                                {companyPhone || '+44 20 7946 0912'}
+                            </a>
                         </div>
                     </div>
 
@@ -105,7 +119,7 @@ export default function About({ companyName, companyNumber, companyAddress, supp
             {/* FOOTER */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 {companyName || 'CHANGE IT UP SERVICES LTD'} (Company No. {companyNumber || '16107295'}). All rights reserved.</p>
+                    <p>© 2026 {companyName || 'GREAT LEADERS LTD'} ({companyTaxId || 'Company No. 15954666'}). All rights reserved.</p>
                     <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>

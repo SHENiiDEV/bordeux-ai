@@ -2,10 +2,10 @@ import React from 'react';
 import { Head, useForm, Link } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
-import { Mail, Building2, MapPin, Send, CheckCircle2, ShieldCheck, Phone } from 'lucide-react';
+import { Mail, Building2, MapPin, Phone, Send, CheckCircle2, ShieldCheck, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function Contact({ companyName, companyNumber, companyAddress, supportEmail }) {
+export default function Contact({ companyName, companyAddress, companyEmail, companyPhone, companyTaxId, supportEmail }) {
     const { data, setData, post, processing, errors, recentlySuccessful, reset } = useForm({
         name: '',
         email: '',
@@ -62,7 +62,7 @@ export default function Contact({ companyName, companyNumber, companyAddress, su
                                     <div>
                                         <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Operating Corporate Entity</span>
                                         <span className="font-bold text-white text-sm">{companyName || 'GREAT LEADERS LTD'}</span>
-                                        <p className="text-[#d4af37] text-[11px] font-semibold mt-0.5">Company Reg No: {companyNumber || '15954666'}</p>
+                                        <p className="text-[#d4af37] text-[11px] font-semibold mt-0.5">{companyTaxId || 'Company No. 15954666'}</p>
                                     </div>
                                 </div>
 
@@ -83,9 +83,21 @@ export default function Contact({ companyName, companyNumber, companyAddress, su
                                         <Mail className="w-5 h-5" />
                                     </div>
                                     <div>
-                                        <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Direct Concierge Email</span>
-                                        <a href={`mailto:${supportEmail}`} className="font-bold text-[#f3cf65] text-sm hover:underline">
-                                            {supportEmail || 'support@fitninja.co.uk'}
+                                        <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Corporate Email</span>
+                                        <a href={`mailto:${companyEmail || 'info@bordeux.co.uk'}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
+                                            {companyEmail || 'info@bordeux.co.uk'}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start space-x-4">
+                                    <div className="p-3 rounded-2xl bg-[#4a0e17] border border-[#d4af37]/30 text-[#f3cf65] shrink-0">
+                                        <Phone className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Corporate Telephone</span>
+                                        <a href={`tel:${companyPhone || '+44 20 7946 0912'}`} className="font-bold text-white text-sm hover:underline block">
+                                            {companyPhone || '+44 20 7946 0912'}
                                         </a>
                                     </div>
                                 </div>
@@ -198,7 +210,7 @@ export default function Contact({ companyName, companyNumber, companyAddress, su
             {/* FOOTER */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 {companyName || 'CHANGE IT UP SERVICES LTD'} (Company No. {companyNumber || '16107295'}). All rights reserved.</p>
+                    <p>© 2026 {companyName || 'GREAT LEADERS LTD'} ({companyTaxId || 'Company No. 15954666'}). All rights reserved.</p>
                     <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>

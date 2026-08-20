@@ -9,14 +9,21 @@ use Inertia\Inertia;
 
 class ContactController extends Controller
 {
+    private function getCorporateProps(): array
+    {
+        return [
+            'companyName' => env('COMPANY_NAME', 'GREAT LEADERS LTD'),
+            'companyAddress' => env('COMPANY_ADDRESS', 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'),
+            'companyEmail' => env('COMPANY_EMAIL', 'info@bordeux.co.uk'),
+            'companyPhone' => env('COMPANY_PHONE', '+44 20 7946 0912'),
+            'companyTaxId' => env('COMPANY_TAX_ID', 'Company No. 15954666'),
+            'supportEmail' => env('MAIL_FROM_ADDRESS', 'support@fitninja.co.uk'),
+        ];
+    }
+
     public function showContact()
     {
-        return Inertia::render('Contact', [
-            'companyName' => env('COMPANY_NAME', 'GREAT LEADERS LTD'),
-            'companyNumber' => env('COMPANY_NUMBER', '15954666'),
-            'companyAddress' => env('COMPANY_ADDRESS', 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'),
-            'supportEmail' => env('MAIL_FROM_ADDRESS', 'support@fitninja.co.uk'),
-        ]);
+        return Inertia::render('Contact', $this->getCorporateProps());
     }
 
     public function submitContact(Request $request)
@@ -51,21 +58,11 @@ class ContactController extends Controller
 
     public function showSupport()
     {
-        return Inertia::render('Support', [
-            'companyName' => env('COMPANY_NAME', 'GREAT LEADERS LTD'),
-            'companyNumber' => env('COMPANY_NUMBER', '15954666'),
-            'companyAddress' => env('COMPANY_ADDRESS', 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'),
-            'supportEmail' => env('MAIL_FROM_ADDRESS', 'support@fitninja.co.uk'),
-        ]);
+        return Inertia::render('Support', $this->getCorporateProps());
     }
 
     public function showAbout()
     {
-        return Inertia::render('About', [
-            'companyName' => env('COMPANY_NAME', 'GREAT LEADERS LTD'),
-            'companyNumber' => env('COMPANY_NUMBER', '15954666'),
-            'companyAddress' => env('COMPANY_ADDRESS', 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'),
-            'supportEmail' => env('MAIL_FROM_ADDRESS', 'support@fitninja.co.uk'),
-        ]);
+        return Inertia::render('About', $this->getCorporateProps());
     }
 }
