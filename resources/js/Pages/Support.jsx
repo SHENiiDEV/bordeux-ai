@@ -25,7 +25,7 @@ export default function Support({ companyName, companyNumber, companyAddress, su
             actionText: 'View Wallet & Invoices',
             actionUrl: route('wallet.index'),
             isExternal: false,
-            desc: 'Instant access to official UK VAT receipts issued by INCHWARD LIMITED.'
+            desc: `Instant access to official UK VAT receipts issued by ${companyName || 'GREAT LEADERS LTD'}.`
         },
         {
             title: 'Telegram Bot Syncing',
@@ -49,7 +49,7 @@ export default function Support({ companyName, companyNumber, companyAddress, su
         },
         {
             q: 'How are official B2B PDF tax invoices generated?',
-            a: 'For every wallet top-up or service deduction, an official PDF receipt is generated in-memory by our DomPDF engine. Invoices display complete merchant of record details (INCHWARD LIMITED, UK Co. No. 16021412), line item breakdowns, and 0% UK B2B Reverse Charge tax status. Invoices can be downloaded at any time from your Wallet & Invoices dashboard.'
+            a: `For every wallet top-up or service deduction, an official PDF receipt is generated in-memory by our DomPDF engine. Invoices display complete merchant of record details (${companyName || 'GREAT LEADERS LTD'}, UK Co. No. ${companyNumber || '15954666'}), line item breakdowns, and 0% UK B2B Reverse Charge tax status. Invoices can be downloaded at any time from your Wallet & Invoices dashboard.`
         },
         {
             q: 'Can I set custom taste filters (e.g. excluding green tannins or oak)?',

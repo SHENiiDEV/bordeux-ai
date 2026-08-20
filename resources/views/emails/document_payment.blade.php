@@ -38,7 +38,7 @@
             </table>
 
             <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">
-                📎 Your official PDF tax invoice (<code>Invoice_{{ $payment->gateway_reference }}.pdf</code>) issued by <strong>INCHWARD LIMITED</strong> is attached to this email.
+                📎 Your official PDF tax invoice (<code>Invoice_{{ $payment->gateway_reference }}.pdf</code>) issued by <strong>{{ env('COMPANY_NAME', 'GREAT LEADERS LTD') }}</strong> is attached to this email.
             </p>
 
             <!-- CTA BUTTON -->
@@ -51,8 +51,8 @@
 
         <!-- FOOTER -->
         <div style="border-top: 1px solid #334155; margin-top: 32px; padding-top: 20px; text-align: center; font-size: 11px; color: #64748b; line-height: 1.6;">
-            <p style="margin: 0 0 4px 0;">© 2026 <strong>INCHWARD LIMITED</strong> (Company Number: 16021412). All rights reserved.</p>
-            <p style="margin: 0;">Academy House, 11 Dunraven Place, Bridgend, Mid Glamorgan, CF31 1JF, United Kingdom</p>
+            <p style="margin: 0 0 4px 0;">© 2026 <strong>{{ env('COMPANY_NAME', 'GREAT LEADERS LTD') }}</strong> (Company Number: {{ env('COMPANY_NUMBER', '15954666') }}). All rights reserved.</p>
+            <p style="margin: 0;">{{ env('COMPANY_ADDRESS', 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA') }}</p>
         </div>
     </div>
 </body>

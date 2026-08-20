@@ -21,7 +21,7 @@ class PublicPagesTest extends TestCase
     {
         $response = $this->get(route('contact'));
         $response->assertStatus(200);
-        $response->assertSee('CHANGE IT UP SERVICES LTD');
+        $response->assertSee('GREAT LEADERS LTD');
     }
 
     public function test_contact_form_submission_dispatches_mail(): void

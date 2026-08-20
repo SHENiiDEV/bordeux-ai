@@ -24,7 +24,7 @@ class InvoiceAndMailTest extends TestCase
 
         $mailable = new WelcomeUserMail($user);
         $mailable->assertSeeInHtml('Dear Alexander');
-        $mailable->assertSeeInHtml('INCHWARD LIMITED');
+        $mailable->assertSeeInHtml('GREAT LEADERS LTD');
     }
 
     public function test_wallet_topup_mail_and_pdf_attachment(): void

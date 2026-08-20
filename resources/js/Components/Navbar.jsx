@@ -365,7 +365,7 @@ export default function Navbar() {
                                 )}
 
                                 <p className="text-[10px] text-slate-500 text-center font-mono">
-                                    INCHWARD LIMITED • UK Co. No. 16021412
+                                    GREAT LEADERS LTD • UK Co. No. 15954666
                                 </p>
                             </div>
                         </motion.div>

@@ -49,7 +49,7 @@ export default function WalletIndex({ balance, payments }) {
                         </div>
                         <div>
                             <h1 className="font-serif-luxury text-3xl font-bold text-white tracking-tight">Account Wallet & Tax Invoices</h1>
-                            <p className="text-xs text-slate-400">Merchant of Record: INCHWARD LIMITED (UK Co. No. 16021412)</p>
+                            <p className="text-xs text-slate-400">Merchant of Record: GREAT LEADERS LTD (UK Co. No. 15954666)</p>
                         </div>
                     </div>
                 </div>

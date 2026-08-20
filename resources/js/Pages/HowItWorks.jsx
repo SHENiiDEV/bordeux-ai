@@ -52,7 +52,7 @@ export default function HowItWorks() {
             highlights: [
                 'Real-time cellar portfolio valuation tracking',
                 'Peak drinking window maturity alert engine',
-                'Official UK B2B PDF Tax Receipts issued by INCHWARD LIMITED'
+                'Official UK B2B PDF Tax Receipts issued by GREAT LEADERS LTD'
             ]
         }
     ];
