@@ -55,6 +55,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/billing', [BillingController::class, 'index'])->name('billing.index');
     Route::post('/billing/checkout', [BillingController::class, 'checkout'])->name('billing.checkout');
 
+    // Wallet & Invoice Routes
+    Route::get('/wallet', [\App\Http\Controllers\WalletController::class, 'index'])->name('wallet.index');
+    Route::post('/wallet/topup', [\App\Http\Controllers\WalletController::class, 'topup'])->name('wallet.topup');
+    Route::post('/wallet/deduct', [\App\Http\Controllers\WalletController::class, 'deduct'])->name('wallet.deduct');
+    Route::get('/wallet/invoice/{payment}', [\App\Http\Controllers\WalletController::class, 'downloadInvoice'])->name('wallet.invoice');
+
     // Admin Concierge Invite Management
     Route::get('/admin/invites', [\App\Http\Controllers\Admin\AdminInviteController::class, 'index'])->name('admin.invites.index');
     Route::post('/admin/invites', [\App\Http\Controllers\Admin\AdminInviteController::class, 'store'])->name('admin.invites.store');

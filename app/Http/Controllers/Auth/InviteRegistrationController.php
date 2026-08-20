@@ -93,10 +93,18 @@ class InviteRegistrationController extends Controller
             'address_country' => $validated['address_country'],
             'address_postcode' => $validated['address_postcode'],
             'agreed_to_terms' => true,
+            'terms_accepted_at' => now(),
             'telegram_username' => $validated['telegram_username'] ?? null,
             'membership_status' => 'active',
             'expires_at' => now()->addYear(),
         ]);
+
+        // Trigger Welcome Mailable
+        try {
+            \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\WelcomeUserMail($user));
+        } catch (\Exception $e) {
+            \Log::error("Failed to send WelcomeUserMail: " . $e->getMessage());
+        }
 
         // Create default TasteProfile for new user
         TasteProfile::create([

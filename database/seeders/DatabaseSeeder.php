@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\InviteCode;
+use App\Models\Payment;
 use App\Models\TasteProfile;
 use App\Models\User;
 use App\Models\WineCellar;
@@ -19,8 +20,18 @@ class DatabaseSeeder extends Seeder
         // 1. Create Admin & Sommelier Concierge User
         $user = User::create([
             'name' => 'Lord Sommelier',
+            'surname' => 'Concierge',
             'email' => 'concierge@bordeux.ai',
             'password' => Hash::make('BordeuxLuxury2026!'),
+            'phone_number' => '+44 7700 900888',
+            'date_of_birth' => '1985-05-15',
+            'address_street' => 'Academy House, 11 Dunraven Place',
+            'address_city' => 'Bridgend',
+            'address_country' => 'United Kingdom',
+            'address_postcode' => 'CF31 1JF',
+            'agreed_to_terms' => true,
+            'terms_accepted_at' => now(),
+            'balance' => 499.00,
             'telegram_username' => 'bordeux_vip',
             'membership_status' => 'active',
             'expires_at' => now()->addYears(2),
@@ -35,7 +46,7 @@ class DatabaseSeeder extends Seeder
             'blacklisted_notes' => 'Over-extracted oak, Excessive residual sugar',
         ]);
 
-        // 3. Create Sample High-Ticket Wine Cellar Items with Peak Drinking Windows
+        // 3. Create Sample High-Ticket Wine Cellar Items
         WineCellar::create([
             'user_id' => $user->id,
             'wine_name' => 'Château Lafite Rothschild 2010',
@@ -70,24 +81,18 @@ class DatabaseSeeder extends Seeder
             'added_via' => 'ai_recommendation',
         ]);
 
-        WineCellar::create([
+        // 4. Create Sample Payment Records
+        Payment::create([
             'user_id' => $user->id,
-            'wine_name' => 'Château d\'Yquem 2009',
-            'region' => 'Sauternes, Bordeaux, France',
-            'type' => 'Dessert Wine',
-            'price_segment' => 'Grand Cru',
-            'ai_rating' => 98.8,
-            'user_rating' => 97.5,
-            'vintage_year' => 2009,
-            'peak_drinking_start' => 2020,
-            'peak_drinking_end' => 2080,
-            'estimated_value' => 850.00,
-            'bottle_count' => 3,
-            'notes' => 'Golden saffron, candied apricot, marmalade complexity.',
-            'added_via' => 'manual',
+            'type' => 'topup',
+            'service_name' => 'Voltoria AI Pro Institutional Memorandum',
+            'amount' => 499.00,
+            'currency' => 'EUR',
+            'gateway_reference' => 'TOPUP-A8F2K9L3',
+            'status' => 'paid',
         ]);
 
-        // 4. Create Active Demo Invite Code
+        // 5. Create Active Demo Invite Code
         InviteCode::create([
             'code' => 'BORDEUX-VIP-2026',
             'created_by_user_id' => $user->id,

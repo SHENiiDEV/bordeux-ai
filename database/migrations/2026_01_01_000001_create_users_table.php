@@ -30,6 +30,8 @@ return new class extends Migration
             $table->string('address_country', 100)->nullable();
             $table->string('address_postcode', 50)->nullable();
             $table->boolean('agreed_to_terms')->default(false);
+            $table->timestamp('terms_accepted_at')->nullable();
+            $table->decimal('balance', 10, 2)->default(0.00);
             $table->rememberToken();
             $table->timestamps();
         });

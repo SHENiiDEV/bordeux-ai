@@ -59,6 +59,14 @@ export default function Navbar() {
                                 <CreditCard className="w-4 h-4" />
                                 <span>Membership</span>
                             </Link>
+
+                            <Link 
+                                href={route('wallet.index')}
+                                className={`flex items-center space-x-2 text-slate-300 hover:text-[#d4af37] transition ${route().current('wallet.*') ? 'text-[#d4af37] font-semibold' : ''}`}
+                            >
+                                <CreditCard className="w-4 h-4 text-[#d4af37]" />
+                                <span>Wallet & Invoices</span>
+                            </Link>
                         </div>
                     ) : null}
 

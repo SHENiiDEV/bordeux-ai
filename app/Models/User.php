@@ -29,6 +29,8 @@ class User extends Authenticatable
         'address_country',
         'address_postcode',
         'agreed_to_terms',
+        'terms_accepted_at',
+        'balance',
         'telegram_id',
         'telegram_username',
         'membership_status',
@@ -58,6 +60,8 @@ class User extends Authenticatable
             'password' => 'hashed',
             'date_of_birth' => 'date',
             'agreed_to_terms' => 'boolean',
+            'terms_accepted_at' => 'datetime',
+            'balance' => 'float',
             'expires_at' => 'datetime',
             'is_admin' => 'boolean',
         ];
@@ -71,6 +75,11 @@ class User extends Authenticatable
     public function wineCellar(): HasMany
     {
         return $this->hasMany(WineCellar::class);
+    }
+
+    public function payments(): HasMany
+    {
+        return $this->hasMany(Payment::class);
     }
 
     public function transactions(): HasMany
