@@ -7,6 +7,7 @@ import { CurrencyProvider } from './Components/CurrencyContext';
 import CurrencySwitcher from './Components/CurrencySwitcher';
 import CookieConsent from './Components/CookieConsent';
 import OfflineBanner from './Components/OfflineBanner';
+import PageLoader from './Components/PageLoader';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Bordeux AI';
 if (typeof window !== 'undefined' && !window.route) {
@@ -20,6 +21,7 @@ createInertiaApp({
         const root = createRoot(el);
         root.render(
             <CurrencyProvider>
+                <PageLoader />
                 <OfflineBanner />
                 <App {...props} />
                 <CookieConsent />

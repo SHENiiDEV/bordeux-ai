@@ -127,6 +127,15 @@ export default function Welcome({ canApply }) {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
                     <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.7, ease: 'easeOut' }}
+                        className="mb-6 relative w-20 h-20 sm:w-24 sm:h-24 rounded-3xl p-1 bg-gradient-to-br from-[#4a0e17] via-[#1a0509] to-[#0a0a0a] border border-[#d4af37]/60 shadow-[0_0_35px_rgba(212,175,55,0.35)] flex items-center justify-center overflow-hidden"
+                    >
+                        <img src="/favicon.png" alt="Bordeux AI Crest" className="w-full h-full object-cover rounded-2xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]" />
+                    </motion.div>
+
+                    <motion.div 
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-panel-burgundy border border-[#d4af37]/40 text-[#f3cf65] text-xs font-bold uppercase tracking-widest mb-8 shadow-xl"
