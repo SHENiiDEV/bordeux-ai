@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Head, useForm } from '@inertiajs/react';
+import { Head, useForm, usePage } from '@inertiajs/react';
 import Navbar from '../../Components/Navbar';
 import AgeVerificationModal from '../../Components/AgeVerificationModal';
 import { Wallet, Plus, FileText, Download, ArrowUpRight, ArrowDownLeft, ShieldCheck, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function WalletIndex({ balance, payments }) {
+    const { company } = usePage().props;
     const [selectedAmount, setSelectedAmount] = useState(499);
     const [serviceName, setServiceName] = useState('Voltoria AI Pro Institutional Memorandum');
 
@@ -49,7 +50,7 @@ export default function WalletIndex({ balance, payments }) {
                         </div>
                         <div>
                             <h1 className="font-serif-luxury text-3xl font-bold text-white tracking-tight">Account Wallet & Tax Invoices</h1>
-                            <p className="text-xs text-slate-400">Merchant of Record: GREAT LEADERS LTD (UK Co. No. 15954666)</p>
+                            <p className="text-xs text-slate-400">Merchant of Record: {company?.name || 'GREAT LEADERS LTD'} (UK Co. No. {company?.number || '15954666'})</p>
                         </div>
                     </div>
                 </div>

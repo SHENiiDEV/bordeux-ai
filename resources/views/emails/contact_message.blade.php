@@ -40,8 +40,8 @@
 
         <!-- FOOTER -->
         <div style="border-top: 1px solid #334155; margin-top: 32px; padding-top: 20px; text-align: center; font-size: 11px; color: #64748b; line-height: 1.6;">
-            <p style="margin: 0 0 4px 0;">© 2026 <strong>{{ env('COMPANY_NAME', 'CHANGE IT UP SERVICES LTD') }}</strong> (Company No: {{ env('COMPANY_NUMBER', '16107295') }}).</p>
-            <p style="margin: 0;">{{ env('COMPANY_ADDRESS', '14 Broadway, Nottingham, United Kingdom, NG1 1PS') }}</p>
+            <p style="margin: 0 0 4px 0;">© 2026 <strong>{{ config('company.name', 'GREAT LEADERS LTD') }}</strong> (Company No: {{ config('company.number', '15954666') }}).</p>
+            <p style="margin: 0;">{{ config('company.address') }}</p>
         </div>
     </div>
 </body>

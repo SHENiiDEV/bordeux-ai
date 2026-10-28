@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
 import { Mail, CreditCard, Bot, HelpCircle, ChevronDown, ChevronUp, ArrowRight, ShieldCheck, FileText, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Support({ companyName, companyAddress, companyEmail, companyPhone, companyTaxId, supportEmail }) {
+export default function Support(props) {
+    const { company } = usePage().props;
+    const companyName = props.companyName || company?.name || 'GREAT LEADERS LTD';
+    const companyAddress = props.companyAddress || company?.address || 'PO Box 4385, 15954666 - COMPANIES HOUSE DEFAULT ADDRESS, Cardiff, CF14 8LH';
+    const companyEmail = props.companyEmail || company?.email || 'info@bordeux.co.uk';
+    const companyPhone = props.companyPhone || company?.phone || '+44 20 7946 0912';
+    const companyTaxId = props.companyTaxId || company?.tax_id || 'Company No. 15954666';
+    const supportEmail = props.supportEmail || companyEmail;
+
     const [openFaq, setOpenFaq] = useState(0);
 
     const supportChannels = [

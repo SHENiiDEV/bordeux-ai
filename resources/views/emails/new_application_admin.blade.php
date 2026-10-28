@@ -61,7 +61,7 @@
         </div>
 
         <div style="border-top: 1px solid #334155; margin-top: 28px; padding-top: 16px; text-align: center; font-size: 11px; color: #64748b;">
-            <p style="margin: 0;">Automated System Dispatch • {{ env('COMPANY_NAME', 'GREAT LEADERS LTD') }}</p>
+            <p style="margin: 0;">Automated System Dispatch • {{ config('company.name', 'GREAT LEADERS LTD') }}</p>
         </div>
     </div>
 </body>

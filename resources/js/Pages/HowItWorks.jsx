@@ -1,11 +1,12 @@
 import React from 'react';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
 import { Sparkles, Zap, Bot, Wine, FileText, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HowItWorks() {
+    const { company } = usePage().props;
     const steps = [
         {
             number: '01',
@@ -155,7 +156,7 @@ export default function HowItWorks() {
             {/* FOOTER */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 GREAT LEADERS LTD (Company No. 15954666). All rights reserved.</p>
+                    <p>© 2026 {company?.name || 'GREAT LEADERS LTD'} ({company?.tax_id || 'Company No. 15954666'}). All rights reserved.</p>
                     <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>

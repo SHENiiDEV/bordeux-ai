@@ -51,8 +51,8 @@
 
         <!-- FOOTER -->
         <div style="border-top: 1px solid rgba(212, 175, 55, 0.15); margin-top: 36px; padding-top: 24px; text-align: center; font-size: 11px; color: #64748b; line-height: 1.6;">
-            <p style="margin: 0 0 4px 0;">© 2026 <strong>{{ env('COMPANY_NAME', 'GREAT LEADERS LTD') }}</strong> ({{ env('COMPANY_TAX_ID', 'Company No. 15954666') }}). All rights reserved.</p>
-            <p style="margin: 0;">{{ env('COMPANY_ADDRESS', 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA') }}</p>
+            <p style="margin: 0 0 4px 0;">© 2026 <strong>{{ config('company.name', 'GREAT LEADERS LTD') }}</strong> ({{ config('company.tax_id', 'Company No. 15954666') }}). All rights reserved.</p>
+            <p style="margin: 0;">{{ config('company.address') }}</p>
         </div>
     </div>
 </body>

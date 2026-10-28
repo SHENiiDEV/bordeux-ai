@@ -103,7 +103,7 @@ php artisan serve --port=1422
 
 - **Operating Company**: GREAT LEADERS LTD
 - **Company Number**: 15954666 (Registered in England & Wales)
-- **Registered Office Address**: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA
+- **Registered Office Address**: PO Box 4385, 15954666 - COMPANIES HOUSE DEFAULT ADDRESS, Cardiff, CF14 8LH
 - **Legal Compliance**: Full Privacy Policy, Terms of Service, and Refund Policy pages styled with Quiet Luxury aesthetic standards and sticky Table of Contents navigation.
 
 ---

@@ -1,11 +1,18 @@
 import React from 'react';
-import { Head, useForm, Link } from '@inertiajs/react';
+import { Head, useForm, Link, usePage } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
-import { Mail, Building2, MapPin, Send, CheckCircle2, ShieldCheck, FileText } from 'lucide-react';
+import { Mail, Building2, MapPin, Send, CheckCircle2, ShieldCheck, FileText, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function Contact({ companyName, companyAddress, companyEmail, companyTaxId, supportEmail }) {
+export default function Contact(props) {
+    const { company } = usePage().props;
+    const companyName = props.companyName || company?.name || 'GREAT LEADERS LTD';
+    const companyAddress = props.companyAddress || company?.address || 'PO Box 4385, 15954666 - COMPANIES HOUSE DEFAULT ADDRESS, Cardiff, CF14 8LH';
+    const companyEmail = props.companyEmail || company?.email || 'info@bordeux.co.uk';
+    const companyPhone = props.companyPhone || company?.phone || '+44 20 7946 0912';
+    const companyTaxId = props.companyTaxId || company?.tax_id || 'Company No. 15954666';
+    const supportEmail = props.supportEmail || companyEmail;
     const { data, setData, post, processing, errors, recentlySuccessful, reset } = useForm({
         name: '',
         email: '',
@@ -73,7 +80,7 @@ export default function Contact({ companyName, companyAddress, companyEmail, com
                                     <div>
                                         <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Registered Office Address</span>
                                         <p className="font-medium text-slate-200 leading-relaxed mt-0.5">
-                                            {companyAddress || 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'}
+                                            {companyAddress}
                                         </p>
                                     </div>
                                 </div>
@@ -84,11 +91,25 @@ export default function Contact({ companyName, companyAddress, companyEmail, com
                                     </div>
                                     <div>
                                         <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Corporate Email</span>
-                                        <a href={`mailto:${companyEmail || 'info@bordeux.co.uk'}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
-                                            {companyEmail || 'info@bordeux.co.uk'}
+                                        <a href={`mailto:${companyEmail}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
+                                            {companyEmail}
                                         </a>
                                     </div>
                                 </div>
+
+                                {companyPhone && (
+                                    <div className="flex items-start space-x-4">
+                                        <div className="p-3 rounded-2xl bg-[#4a0e17] border border-[#d4af37]/30 text-[#f3cf65] shrink-0">
+                                            <Phone className="w-5 h-5" />
+                                        </div>
+                                        <div>
+                                            <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Corporate Telephone</span>
+                                            <a href={`tel:${companyPhone}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
+                                                {companyPhone}
+                                            </a>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
 

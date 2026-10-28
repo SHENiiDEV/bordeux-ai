@@ -177,11 +177,11 @@
         <tr>
             <td class="details-col">
                 <div class="section-label">Merchant of Record (Issuer)</div>
-                <div class="company-name">{{ env('COMPANY_NAME', 'GREAT LEADERS LTD') }}</div>
+                <div class="company-name">{{ config('company.name', 'GREAT LEADERS LTD') }}</div>
                 <div style="color: #475569; margin-top: 3px;">
-                    Company Number: <strong>{{ env('COMPANY_NUMBER', '15954666') }}</strong><br>
-                    {{ env('COMPANY_ADDRESS', 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA') }}<br>
-                    Email: {{ env('MAIL_FROM_ADDRESS', 'support@fitninja.co.uk') }}
+                    Company Number: <strong>{{ config('company.number', '15954666') }}</strong><br>
+                    {{ config('company.address') }}<br>
+                    Email: {{ config('company.email', 'info@bordeux.co.uk') }}
                 </div>
             </td>
             <td class="details-col" style="padding-left: 20px;">
@@ -225,7 +225,7 @@
         <tbody>
             <tr>
                 <td>
-                    <strong>{{ $payment->service_name ?: 'Voltoria AI B2B SaaS Service' }}</strong>
+                    <strong>{{ $payment->service_name ?: 'Bordeux AI B2B SaaS Service' }}</strong>
                     <div style="font-size: 9.5px; color: #64748b; margin-top: 2px;">
                         @if($payment->type === 'topup')
                             Account Wallet Balance Refill & Credit Allocation
@@ -259,7 +259,7 @@
 
     <!-- LEGAL DISCLAIMER -->
     <div class="legal-notice">
-        <strong>Legal & Taxation Notice:</strong> {{ env('COMPANY_NAME', 'GREAT LEADERS LTD') }} (UK Co. No. {{ env('COMPANY_NUMBER', '15954666') }}) is the official Merchant of Record for this transaction. This electronic document serves as an official tax receipt under UK commercial legislation. Customers retain a 14-day statutory right to request a refund for unconsumed wallet credits in accordance with our Refund & Cancellation Policy. All disputes are subject to the jurisdiction of the courts of England and Wales.
+        <strong>Legal & Taxation Notice:</strong> {{ config('company.name', 'GREAT LEADERS LTD') }} (UK Co. No. {{ config('company.number', '15954666') }}) is the official Merchant of Record for this transaction. This electronic document serves as an official tax receipt under UK commercial legislation. Customers retain a 14-day statutory right to request a refund for unconsumed wallet credits in accordance with our Refund & Cancellation Policy. All disputes are subject to the jurisdiction of the courts of England and Wales.
     </div>
 </body>
 </html>

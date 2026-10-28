@@ -4,7 +4,7 @@ import { Wine, Sliders, CreditCard, Sparkles, LogOut, Shield, Menu, X, Wallet, C
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
-    const { auth } = usePage().props;
+    const { auth, company } = usePage().props;
     const user = auth?.user;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -411,7 +411,7 @@ export default function Navbar() {
                                 )}
 
                                 <p className="text-[10px] text-slate-500 text-center font-mono">
-                                    GREAT LEADERS LTD • UK Co. No. 15954666
+                                    {company?.name || 'GREAT LEADERS LTD'} • UK Co. No. {company?.number || '15954666'}
                                 </p>
                             </div>
                         </motion.div>

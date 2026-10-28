@@ -1,15 +1,20 @@
 import React from 'react';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import Navbar from '../../Components/Navbar';
 import AgeVerificationModal from '../../Components/AgeVerificationModal';
 import { ShieldCheck, CheckCircle2, ArrowLeft, RefreshCw, CreditCard } from 'lucide-react';
 
 export default function RefundPolicy() {
+    const { company } = usePage().props;
+    const companyName = company?.name || 'GREAT LEADERS LTD';
+    const companyTaxId = company?.tax_id || 'Company No. 15954666';
+    const companyAddress = company?.address || 'PO Box 4385, 15954666 - COMPANIES HOUSE DEFAULT ADDRESS, Cardiff, CF14 8LH';
+
     const sections = [
         {
             id: 'satisfaction-guarantee',
             title: '1. 14-Day Concierge Satisfaction Guarantee',
-            content: `GREAT LEADERS LTD stands behind the craftsmanship and intelligence of Bordeux AI. If you are not completely satisfied with your AI Sommelier access or membership concierge experience within the first 14 calendar days of your initial subscription activation, your concierge representative will process a 100% refund of your initial fee.`
+            content: `${companyName} stands behind the craftsmanship and intelligence of Bordeux AI. If you are not completely satisfied with your AI Sommelier access or membership concierge experience within the first 14 calendar days of your initial subscription activation, your concierge representative will process a 100% refund of your initial fee.`
         },
         {
             id: 'cancellation-terms',
@@ -29,7 +34,7 @@ export default function RefundPolicy() {
         {
             id: 'company-info',
             title: '5. Corporate Entity & Support Address',
-            content: `Refund requests and billing inquiries are processed by GREAT LEADERS LTD (Company No. 15954666). Registered Office Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA.`
+            content: `Refund requests and billing inquiries are processed by ${companyName} (${companyTaxId}). Registered Office Address: ${companyAddress}.`
         }
     ];
 
@@ -51,7 +56,7 @@ export default function RefundPolicy() {
                             Refund & Cancellation Policy
                         </h1>
                         <p className="text-xs text-slate-300 font-light">
-                            GREAT LEADERS LTD (Company No. 15954666) • Effective Date: January 1, 2026
+                            {companyName} ({companyTaxId}) • Effective Date: January 1, 2026
                         </p>
                     </div>
 
@@ -110,7 +115,7 @@ export default function RefundPolicy() {
             {/* Footer */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 GREAT LEADERS LTD (Company No. 15954666). Registered Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA. All rights reserved.</p>
+                    <p>© 2026 {companyName} ({companyTaxId}). Registered Address: {companyAddress}. All rights reserved.</p>
                     <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>

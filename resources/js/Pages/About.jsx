@@ -1,11 +1,17 @@
 import React from 'react';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
-import { Wine, Award, ShieldCheck, Sparkles, Building2, MapPin, Mail, ArrowRight } from 'lucide-react';
+import { Wine, Award, ShieldCheck, Sparkles, Building2, MapPin, Mail, ArrowRight, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function About({ companyName, companyAddress, companyEmail, companyTaxId }) {
+export default function About(props) {
+    const { company } = usePage().props;
+    const companyName = props.companyName || company?.name || 'GREAT LEADERS LTD';
+    const companyAddress = props.companyAddress || company?.address || 'PO Box 4385, 15954666 - COMPANIES HOUSE DEFAULT ADDRESS, Cardiff, CF14 8LH';
+    const companyEmail = props.companyEmail || company?.email || 'info@bordeux.co.uk';
+    const companyPhone = props.companyPhone || company?.phone || '+44 20 7946 0912';
+    const companyTaxId = props.companyTaxId || company?.tax_id || 'Company No. 15954666';
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-slate-100 flex flex-col font-sans selection:bg-[#4a0e17] selection:text-white">
             <Head title="About Us — Bordeux AI Private Club" />
@@ -84,16 +90,25 @@ export default function About({ companyName, companyAddress, companyEmail, compa
                         <div className="space-y-1">
                             <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Registered Office Address</span>
                             <p className="font-medium text-slate-200 leading-relaxed">
-                                {companyAddress || 'Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA'}
+                                {companyAddress}
                             </p>
                         </div>
 
-                        <div className="space-y-1 sm:col-span-2">
+                        <div className="space-y-1">
                             <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Corporate Email</span>
-                            <a href={`mailto:${companyEmail || 'info@bordeux.co.uk'}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
-                                {companyEmail || 'info@bordeux.co.uk'}
+                            <a href={`mailto:${companyEmail}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
+                                {companyEmail}
                             </a>
                         </div>
+
+                        {companyPhone && (
+                            <div className="space-y-1">
+                                <span className="text-slate-400 block uppercase font-bold text-[10px] tracking-wider">Corporate Telephone</span>
+                                <a href={`tel:${companyPhone}`} className="font-bold text-[#f3cf65] text-sm hover:underline block">
+                                    {companyPhone}
+                                </a>
+                            </div>
+                        )}
                     </div>
 
                     <div className="pt-4 border-t border-[#d4af37]/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">

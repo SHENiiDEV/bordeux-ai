@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import Navbar from '../Components/Navbar';
 import AgeVerificationModal from '../Components/AgeVerificationModal';
 import { useCurrency } from '../Components/CurrencyContext';
@@ -11,6 +11,7 @@ import {
 import { motion } from 'framer-motion';
 
 export default function Welcome({ canApply }) {
+    const { company } = usePage().props;
     const [activeTab, setActiveTab] = useState('telegram');
     const [billingCycle, setBillingCycle] = useState('annual'); // 'monthly' | 'annual'
     const [isPlayingVoice, setIsPlayingVoice] = useState(false);
@@ -498,7 +499,7 @@ export default function Welcome({ canApply }) {
             {/* FOOTER */}
             <footer className="border-t border-[#d4af37]/10 bg-[#070707] py-8 text-center text-xs text-slate-500">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p>© 2026 GREAT LEADERS LTD (Company No. 15954666). Registered Address: Dept 6193 43 Owston Road, Carcroft, Doncaster, DN6 8DA. All rights reserved.</p>
+                    <p>© 2026 {company?.name || 'GREAT LEADERS LTD'} ({company?.tax_id || 'Company No. 15954666'}). Registered Address: {company?.address || 'PO Box 4385, 15954666 - COMPANIES HOUSE DEFAULT ADDRESS, Cardiff, CF14 8LH'}. All rights reserved.</p>
                     <div className="flex space-x-6 shrink-0">
                         <Link href={route('legal.terms')} className="hover:text-[#d4af37] transition">Terms of Service</Link>
                         <Link href={route('legal.privacy')} className="hover:text-[#d4af37] transition">Privacy Policy</Link>
